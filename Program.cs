@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+
 // REGISTER SERVICES
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<ThemeService>();
@@ -15,7 +16,9 @@ builder.Services.AddScoped<ZoneService>();
 builder.Services.AddScoped<ClientService>();
 builder.Services.AddScoped<UtilisateurService>();
 
+
 var app = builder.Build();
+
 
 if (!app.Environment.IsDevelopment())
 {
@@ -31,3 +34,4 @@ app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
 app.Run();
+
